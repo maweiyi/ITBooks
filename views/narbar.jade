@@ -1,19 +1,21 @@
-//Fixed navbar
 div.navbar.navbar-inverse.navbar-fixed-top
-  div.container
-    div.navbar-header
-      button(type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse')
-        span.sr-only Toggle navigation
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
-      a(class='navbar-brand' href='/books') ITBooks
-        
-    div.navbar-collapse.collapse
-      ul.nav.navbar-nav
-        li.active
-          a(href='/blog') All ITBooks
+    div.container
+        div.navbar-header
+            button(type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse')
+                span.sr-only Toggle navigation
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+            a(class='navbar-brand' href='/blog') ITBooks
+        div.navbar-collapse.collapse
+            ul.nav.navbar-nav
+                li.active
+                   a(href="#") All ITBooks
+                li
+                   a(href="#") All Categories
+            form(class="navbar-form navbar-right", role="search")
+                div.form-group
+                   input(type="text", class="form-control input-sm", placeholder="Search", style="border-radius: 20px; width: 240px")
 
-        li.active
-          a(href='/test') All Categories
-              
+
+
