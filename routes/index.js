@@ -1,21 +1,33 @@
 var express = require('express');
-var Operatedata = require('../models/model');
 var router = express.Router();
-
 /* GET home page. */
-router.get('/', function(req, res, next) {
 
-  var opearData = new Operatedata();
 
-  opearData.findData();
+//REST API
+router.post('/api/selection', function(req, res, next) {
 
-  res.render('index');
+  req.bookModels.execPageQuery(req.params.id, 10, function (err, books) {
+    if (err) {
+      return next(err);
+    } else {
+      res.send(JSON.stringify(books));
+    }
+
+
+  });
+
+});
+
+router.get('/api/discover', function (req, res, next) {
 
 });
 
 
-router.get('/test', function (req, res, next) {
-  res.render('test2', {ps: 15});
-})
+router.get('/api/search', function (req, res, next) {
+
+});
+
 
 module.exports = router;
+
+

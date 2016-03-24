@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="file://$PROJECT_DIR$" libraries="{ITBooks node_modules}" />
+    <file url="PROJECT" libraries="{ITBooks node_modules, angularjs-DefinitelyTyped, async-DefinitelyTyped, express-DefinitelyTyped, http-status-codes-DefinitelyTyped, http-string-parser-DefinitelyTyped, httperr-DefinitelyTyped, jQuery UI-1.10.2, jade-DefinitelyTyped, jquery-DefinitelyTyped, mongoose-DefinitelyTyped, mongoose-auto-increment-DefinitelyTyped}" />
+    <includedPredefinedLibrary name="ECMAScript 6" />
     <includedPredefinedLibrary name="Node.js Core" />
+    <includedPredefinedLibrary name="WebGL" />
   </component>
 </project>
