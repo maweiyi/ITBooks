@@ -16,5 +16,7 @@
     <orderEntry type="library" name="jQuery UI-1.10.2" level="application" />
     <orderEntry type="library" name="jquery-DefinitelyTyped" level="application" />
     <orderEntry type="library" name="ITBooks node_modules" level="project" />
+    <orderEntry type="library" name="ejs-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="ejs-locals-DefinitelyTyped" level="application" />
   </component>
 </module>
