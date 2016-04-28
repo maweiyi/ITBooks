@@ -23,8 +23,8 @@ Created by maweiyi on 12/9/15.
         <div class="col-lg-3">
             <ul style="margin-top: 30px; list-style-type:none">
                 <li style="color:red; font-size:14px; font-weight: bold">Web Developer</li>
-                <li style="margin-top: 10px; font-family: Arial"><a href="/book?category=html" target="_blank" style="text-decoration: none">HTML5 & CSS</a></li>
-                <li style="margin-top: 10px"><a href="/book?category=javascript" style="text-decoration: none">JavaScript</a></li>
+                <li style="margin-top: 10px; font-family: Arial"><a href="/book?category=html" style="text-decoration: none">HTML5 & CSS</a></li>
+                <li style="margin-top: 10px" id="javascript"><a href="/book?category=javascript" style="text-decoration: none">JavaScript</a></li>
                 <li style="margin-top: 10px"><a href="/book?category=php" style="text-decoration: none">PHP</a></li>
                 <li style="margin-top: 10px"><a href="/book?category=asp.net" style="text-decoration: none">ASP.NET</a></li>
                 <li style="color:red; font-size:14px; font-weight: bold; margin-top: 10px">Programming</li>
@@ -39,23 +39,15 @@ Created by maweiyi on 12/9/15.
                 <li style="color:red; font-size:14px; font-weight: bold; margin-top: 10px">Operating&Systems</li>
                 <li style="margin-top: 10px"><a href="/book?category=ios" style="text-decoration: none">iOS</a></li>
                 <li style="margin-top: 10px"><a href="/book?category=android" style="text-decoration: none">Android</a></li>
-                <li style="margin-top: 10px"><a href="/book?category=linux-unix" style="text-decoration: none">Linux&Unix</a></li>
+                <li style="margin-top: 10px"><a href="/book?category=linux" style="text-decoration: none">Linux&Unix</a></li>
                 <li style="margin-top: 10px"><a href="/book?category=windows" style="text-decoration: none">Windows</a></li>
                 <li style="color:red; font-size:14px; font-weight: bold; margin-top: 10px">Networking</li>
                 <li style="color:red; font-size:14px; font-weight: bold; margin-top: 10px">Others</li>
-
-                <li style="color:red; font-size:16px; font-weight: bold; margin-top: 40px">支持一下</li>
             </ul>
-
-            <div>
-
-                <img src="/images/weixin.JPG" width="160px" height="180px">
-                <img src="/images/zhifubao.JPG" width="160px" height="200px" style="margin-top: 100px">
-            </div>
         </div>
         <div class="col-lg-9">
             <ul style="margin-top: 30px; list-style-type:none"></ul>
-            <%include showList.ejs%>
+            <%include category.ejs%>
         </div>
     </div>
 </div>

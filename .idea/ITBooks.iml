@@ -18,5 +18,6 @@
     <orderEntry type="library" name="ITBooks node_modules" level="project" />
     <orderEntry type="library" name="ejs-DefinitelyTyped" level="application" />
     <orderEntry type="library" name="ejs-locals-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="koa-DefinitelyTyped" level="application" />
   </component>
 </module>

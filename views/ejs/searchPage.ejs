@@ -1,12 +1,14 @@
+<div style="margin-top: 10px"><h3>Search results '<%=key%>'</h3></div>
+<div style="height: 1px; width: 100%; background: #DCDCDC; overflow: hidden; margin-top: 30px"></div>
 <%for (var i = 0; i <book.length; i++) {%>
 <div class="media"><a href="#" class="pull-left"><img src=<%=book[i]["bookImage"][0]%> height="160" width="120" style="margin-right: 20px" class="media-object"/></a>
     <div class="media-body">
         <article style="height: 150px; ">
 
-        <h4 style="font-size: 22px; color: #555" class="media-heading"><a style="font-size: 22px; color: #555" class="media-heading" href="/details?id=<%=book[i]["_id"]%>"><%=book[i]["bookTitle"][0]%></a></h4>
+            <h4 style="font-size: 22px; color: #555" class="media-heading"><a style="font-size: 22px; color: #555" class="media-heading" href="/details?id=<%=book[i]["_id"]%>"><%=book[i]["bookTitle"][0]%></a></h4>
             <p style="font-size: 10px; margin-left: 0px">By:<%=book[i]["bookAuthor"][0]%></p>
-        <p style="font-size: 14px"><%= book[i]["bookDescription"][0]%>... </p>
-       </article>
+            <p style="font-size: 14px"><%= book[i]["bookDescription"][0]%>... </p>
+        </article>
     </div>
 </div>
 
@@ -19,14 +21,7 @@
 
 <script type="text/javascript">
 
-    function getvalue() {
 
-        /*window.alert("1000");
-
-        window.alert($('#searchbook').val());*/
-
-
-    }
     function getParameter(name) {
         var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
         var r = window.location.search.substr(1).match(reg);
@@ -37,26 +32,46 @@
     $(function(){
         var totalPage;
         var totalRecords;
+        var search = getParameter('searchbook');
 
-        $.ajax({
+        //window.alert(search);
+
+       $.ajax({
             type: 'get',
-            url: 'http://127.0.0.1:3000/page',
+            url: 'http://127.0.0.1:3000/count',
             async: false,
+            data: {searchbook: search},
             success: function (data) {
 
                 var pages = JSON.parse(data);
-                //window.alert(pages['number']);
+
+                //window.alert(pages);
+
+                //window.alert(pages['counts']);
+
+                totalRecords = pages['counts'];
+                if (parseInt(pages['counts']) % 10 == 0) {
+                    totalPage = parseInt(pages['counts']) / 10;
+                } else {
+
+                    totalPage = parseInt(pages['counts']) / 10 + 1;
+
+
+
+
+                /*var pages = JSON.parse(data);
                 //window.alert(data);
                 totalRecords = pages['number'];
                 // window.alert(totalRecords);
                 if (pages['number'] % 10 ==0) {
                     totalPage = pages['number'] / 10;
                 } else {
-                    totalPage = pages['number'] / 10 + 1;
+                    totalPage = pages['number'] / 10 + 1;*/
                 }
 
             }
         })
+
         var pageNo = getParameter('pno');
         if(!pageNo){
             pageNo = 1;
@@ -70,11 +85,11 @@
             //总数据条数
             totalRecords : totalRecords,
             //链接前部
-            hrefFormer : 'nextpage',
+            hrefFormer : 'search',
             //链接尾部
             hrefLatter : '',
             getLink : function(n){
-                return this.hrefFormer + this.hrefLatter + "?pno="+n;
+                return this.hrefFormer + this.hrefLatter + "?pno="+n + "&searchbook=" + search;
             }
             /*
              ,lang				: {

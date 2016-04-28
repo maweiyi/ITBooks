@@ -8,11 +8,17 @@ var bookModels = require('./models/book');
 var mongoose = require('mongoose');
 
 //连接数据库
-var dbUrl = 'mongodb://localhost/itbooks';
-var db = mongoose.connect(dbUrl, {safe: true});
+var dbUrl = 'mongodb://username:password@localhost/itbooks';
+var db = mongoose.connect(dbUrl, {safe: true}, function (err, db) {
+  if (err) {
+    console.log(err);
+  }
+
+});
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var books = require('./routes/book');
 
 var app = express();
 
@@ -34,6 +40,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/', books);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

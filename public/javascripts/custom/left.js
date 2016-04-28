@@ -4,7 +4,13 @@
 
 
 $(function () {
-    $('#javascript').mouseover(function () {
+    $('a').mouseover(function () {
         $(this).addClass("blue");
     });
+    
+    /*$('a').mouseleave(function () {
+        
+        $(this).add('blue')
+        
+    })*/
 });

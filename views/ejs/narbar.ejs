@@ -8,11 +8,12 @@
                 <li class="active"><a href="#">All ITBooks</a></li>
                 <li><a href="#">All Categories</a></li>
             </ul>
-            <form role="search" class="navbar-form navbar-right">
-                <div class="form-group">
-                    <input type="text" placeholder="Search" style="border-radius: 20px; width: 240px" class="form-control input-sm"/>
-                </div>
+            <div class="form-group col-lg-offset-6">
+            <form role="search" class="navbar-form navbar-right" action="/search" method="get">
+                <input type="text" style="border-radius: 20px; width: 200px" placeholder="Search"  class="form-control" name="searchbook" id="searchbook"/>
+
             </form>
+            </div>
         </div>
     </div>
 </div>
