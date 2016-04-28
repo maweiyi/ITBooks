@@ -8,7 +8,7 @@ var bookModels = require('./models/book');
 var mongoose = require('mongoose');
 
 //连接数据库
-var dbUrl = 'mongodb://MWY:AX183737@localhost/itbooks';
+var dbUrl = 'mongodb://user:password@localhost/itbooks';
 var db = mongoose.connect(dbUrl, {safe: true}, function (err, db) {
   if (err) {
     console.log(err);
