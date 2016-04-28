@@ -9,7 +9,6 @@ exports.bookDetail = function (req, res, next) {
         if (err) {
             next(err);
         } else {
-            console.log(onebook);
             res.render("bookDetail", {
                 book: onebook
             });
@@ -77,20 +76,20 @@ exports.searchByCategory = function (req, res, next) {
 
     if (req.query.pno===undefined) {
         req.bookModels.execPageQuery(1, 10,{bookCategory: {$regex: req.query.category, $options: "$i" }}, function (err, book) {
-            console.log(book);
+            //console.log(book);
 
-            console.log(book.rows);
+           // console.log(book.rows);
 
             res.render("cateindex", {
                 book: book.rows,
-                key: req.query.searchbook
+                key: req.query.category
             })
 
         });
 
     } else {
 
-        console.log(req.query.pno);
+        console.log("CCCCCCCC",req.query.pno);
 
         req.bookModels.execPageQuery(req.query.pno, 10,{bookCategory: {$regex: req.query.category, $options: "$i"}}, function (err, book) {
             res.render("cateindex", {
